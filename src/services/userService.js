@@ -178,7 +178,7 @@ class UserService{
     } catch (error) {
       console.log('error while reverifying user', error)
       if(error.message === 'incorrect email or password'){
-        throw new HttpError(`${error.message}`, 401);  
+        throw new HttpError(`${error.message}`, 400);  
       } else if(error.message === 'account already verified'){
         throw new HttpError(`${error.message}`, 400);
       } else {
