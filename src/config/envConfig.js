@@ -10,6 +10,8 @@ const generateEnv = () => {
       '${DB_PASSWORD}', process.env.DB_PASSWORD
     ).replace(
       '${DB_NAME}', process.env.DB_NAME
+    ).replace(
+      '${DB_APP_NAME}', process.env.DB_APP_NAME
     ),
     jwtSecret: process.env.JWT_SECRET,
     jwtRefreshSecret: process.env.JWT_REFRESH_SECRET,
