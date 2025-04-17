@@ -25,7 +25,8 @@ const generateEnv = () => {
     emailApps: process.env.EMAIL_APPS,
     emailPasswordApps: process.env.EMAIL_PASS_APPS,
     webAppBaseUrl: process.env.WEB_APP_BASE_URL,
-    secureCookie: process.env.SECURE_COOKIE
+    secureCookie: process.env.SECURE_COOKIE,
+    sameSiteStatus: process.env.SAME_SITE_STATUS
   };
 
   return config

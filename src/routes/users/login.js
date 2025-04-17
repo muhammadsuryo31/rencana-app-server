@@ -8,7 +8,8 @@ module.exports = {
         jwtRefreshSecret,
         jwtTokenLifeCycle,
         jwtRefreshTokenLifeCycle,
-        secureCookie
+        secureCookie,
+        sameSiteStatus
       } = req.config;
       
       const userService = req.config.services.userService
@@ -24,13 +25,13 @@ module.exports = {
       res.cookie("refreshToken", refreshToken, {
         httpOnly: true,
         secure: secureCookie,
-        sameSite: "Strict",
+        sameSite: sameSiteStatus,
         maxAge: parseInt(jwtRefreshTokenLifeCycle, 10) * 24 * 60 * 60 * 1000
       });
       res.cookie("accessToken", accessToken, {
         httpOnly: true,
         secure: secureCookie,
-        sameSite: "Strict",
+        sameSite: sameSiteStatus,
         maxAge: parseInt(jwtTokenLifeCycle, 10) * 60 * 1000
       });
 
